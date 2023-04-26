@@ -11,7 +11,7 @@ Unity course (Polina Orlova)
 * **SDK:** Android
 * **Devices:** Tablet, Phone
 * **Stack:** Unity, C#
-* **Tecknologies:** Horizontal surfaces tracking, geolocation, camera
+* **Tecknologies:** Geolocation, camera
 * **Controller:** Device Moving, Touchpad
 * **Format:** Single player 
 * **Interaction:** UI

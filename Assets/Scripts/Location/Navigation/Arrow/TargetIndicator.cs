@@ -5,9 +5,8 @@ using UnityEngine;
 public class TargetIndicator : MonoBehaviour
 {
     public GameObject prefab;
-    GameObject player;
     public float rotationSpeed = 3.0f;
-
+    
     void Update()
     {
         Vector3 cameraPosition = Camera.main.transform.position;

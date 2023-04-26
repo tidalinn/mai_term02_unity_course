@@ -33,8 +33,9 @@ public class UserGEO : GEO
         // Start service before querying location
         Input.location.Start();
 
-        // Wait until service initializes
         int maxWait = 10;
+
+        // Wait until service initializes
         while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
         {
             yield return new WaitForSeconds(1);
