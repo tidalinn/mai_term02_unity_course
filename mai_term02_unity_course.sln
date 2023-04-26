@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tayx.Graphy", "Tayx.Graphy.csproj", "{efb38e4c-33db-4ed8-3e0f-08fe649e4f12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{e5e195d1-cb6f-ae84-1bfa-0bfd42b8f587}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tayx.Graphy.Editor", "Tayx.Graphy.Editor.csproj", "{e525c91c-adf8-c8b3-9cf7-efdbabe2f8c4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{efb38e4c-33db-4ed8-3e0f-08fe649e4f12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{efb38e4c-33db-4ed8-3e0f-08fe649e4f12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{e5e195d1-cb6f-ae84-1bfa-0bfd42b8f587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{e5e195d1-cb6f-ae84-1bfa-0bfd42b8f587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{e525c91c-adf8-c8b3-9cf7-efdbabe2f8c4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{e525c91c-adf8-c8b3-9cf7-efdbabe2f8c4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
