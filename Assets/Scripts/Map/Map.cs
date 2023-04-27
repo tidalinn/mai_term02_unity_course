@@ -15,18 +15,18 @@ public class Map : MonoBehaviour
     public string serviceVersion;
     public string pathMapbox = "mapbox";
     public string accessToken = "pk.eyJ1IjoidGlkYWxpbm4iLCJhIjoiY2xndnlwMWNhMGNjZDNmbXVhYmQwbWE2MSJ9.h-QPnFYE2ioc4WatYwvNTA";
-    public float userLatitude;
-    public float userLongitude;
-    public float userLatitudeLast = 0f;
-    public float userLongitudeLast = 0f;
-    public float objectLatitude;
-    public float objectLongitude;
+    public double userLatitude;
+    public double userLongitude;
+    public double userLatitudeLast = 0;
+    public double userLongitudeLast = 0;
+    public double objectLatitude;
+    public double objectLongitude;
     public UserGEO userGEO;
     public ObjectGEO objectGEO;
 
     public void UpdateMap(string url)
     {
-        if ((userLatitudeLast == 0f && userLatitudeLast == 0f) ||
+        if ((userLatitudeLast == 0 && userLatitudeLast == 0) ||
             (userLatitudeLast != userLatitude || userLongitudeLast != userLongitude))
         {
             StartCoroutine(LoadMap(url));
@@ -49,7 +49,7 @@ public class Map : MonoBehaviour
             gameObject.GetComponent<RawImage>().texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
     }
 
-    public string ReplaceComma(float value)
+    public string ReplaceComma(double value)
     {
         return value.ToString().Replace(",", ".");
     }

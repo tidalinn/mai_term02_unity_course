@@ -20,4 +20,4 @@ Unity course (Polina Orlova)
 * **Location:** No specific location yet
 
 [Game Design Document](https://docs.google.com/document/d/1soUnbuJjMpJCNsZL-YtYGW4wsXm2rZh3ebHbP13XVZw/edit?usp=sharing) | 
-[APK file]() | [Video]()
+[APK file](https://drive.google.com/file/d/1u7uhBmFYn1x3HSkQ5BxTeUNbOEKRNIqG/view?usp=sharing) | [Video](https://drive.google.com/file/d/19ajF30nlt5pkoY4ku02kyT2X3XjXe_ZK/view?usp=sharing)

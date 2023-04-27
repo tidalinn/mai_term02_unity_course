@@ -12,9 +12,9 @@ public class ObjectPlacement : MonoBehaviour
     ObjectGEO objectGEO;
     UserGEO userGEO;
     DistanceCalculation distanceCalculation;
-    public float distance;
-    public float radiusToPlace = 80f;
-    public float radiusOnSpot = 10f;
+    public double distance;
+    public double distanceToPlace = 80;
+    public double distanceToSpot = 20;
 
     void Start()
     {
@@ -38,35 +38,32 @@ public class ObjectPlacement : MonoBehaviour
         distance = RoundDistance(distance);
         distanceText.text = CheckDistance(distance);
 
-        if (distance < radiusToPlace)
+        if (distance < distanceToPlace)
         {
             Vector3 objectPosition = prefab.transform.position;
 
-            if (distance < radiusOnSpot)
-                distance = radiusOnSpot;
-
-            prefab.transform.position = new Vector3(objectPosition.x, objectPosition.y, distance);
+            prefab.transform.position = new Vector3(objectPosition.x, objectPosition.y, (float)distance);
             prefab.SetActive(true);
         }
         else
             prefab.SetActive(false);
     }
 
-    private float RoundDistance(float value)
+    private double RoundDistance(double value)
     {
         if (value >= 1f)
-            return (float)Math.Round(value, 0);
+            return (double)Math.Round(value, 0);
         else
-            return (float)Math.Round(value * 1000, 0); 
+            return (double)Math.Round(value * 1000, 0); 
     }
 
-    private string CheckDistance(float value)
+    private string CheckDistance(double value)
     {
         if (value >= 1000f)
         {
             return value.ToString() + "км";
         }
-        else if (value < radiusOnSpot)
+        else if (value < distanceToSpot)
         {
             return "Вы на месте";
         }

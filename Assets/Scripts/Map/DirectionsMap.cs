@@ -23,8 +23,8 @@ public class DirectionsMap : Map
 
     void Update()
     {
-        userLatitude = 54.898995062680655f;
-        userLongitude = 37.33393013477326f;
+        userLatitude = 54.898995062680655;
+        userLongitude = 37.33393013477326;
 
         url = urlBase + service + "/" + serviceVersion + "/" + pathMapbox + "/" + routingProfile + "/" + 
               ReplaceComma(userLongitude) + "," + ReplaceComma(userLatitude) + ";" +

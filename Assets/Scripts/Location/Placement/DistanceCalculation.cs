@@ -5,14 +5,14 @@ using System;
 
 public class DistanceCalculation: MonoBehaviour
 {
-    float km_per_degree_meridian = 111.1f;
-    float km_per_degree_equator = 111.3f;
+    double km_per_degree_meridian = 111.1;
+    double km_per_degree_equator = 111.3;
 
-    public float CalculateDistance(
-        float userLatitude, 
-        float userLongitude, 
-        float objectLatitude, 
-        float objectLongitude)
+    public double CalculateDistance(
+        double userLatitude, 
+        double userLongitude, 
+        double objectLatitude, 
+        double objectLongitude)
     {
         // latitude - широта
         // longitude - долгота
@@ -25,36 +25,36 @@ public class DistanceCalculation: MonoBehaviour
         // (float, float) C = (userLatitude, objectLongitude);
         // (float, float) D = (objectLatitude, objectLongitude);
 
-        float degrees_latitude_diff = userLatitude - objectLatitude;
-        float km_latitude_diff = degrees_latitude_diff * km_per_degree_meridian;
+        double degrees_latitude_diff = userLatitude - objectLatitude;
+        double km_latitude_diff = degrees_latitude_diff * km_per_degree_meridian;
 
-        float objectLatitudeCos = (float)Math.Cos(Math.PI * objectLatitude / 180.0);
-        float userLatitudeCos = (float)Math.Cos(Math.PI *userLatitude / 180.0);
+        double objectLatitudeCos = (double)Math.Cos(Math.PI * objectLatitude / 180.0);
+        double userLatitudeCos = (double)Math.Cos(Math.PI *userLatitude / 180.0);
 
-        float degree_top = km_per_degree_equator * userLatitudeCos;
-        float degree_bottom = km_per_degree_equator * objectLatitudeCos;
+        double degree_top = km_per_degree_equator * userLatitudeCos;
+        double degree_bottom = km_per_degree_equator * objectLatitudeCos;
 
-        float degrees_longitude_diff = objectLongitude - userLongitude;
+        double degrees_longitude_diff = objectLongitude - userLongitude;
 
-        float BC = degrees_longitude_diff * degree_top;
-        float AD = degrees_longitude_diff * degree_bottom;
+        double BC = degrees_longitude_diff * degree_top;
+        double AD = degrees_longitude_diff * degree_bottom;
 
         //   B C
         // A H  D
 
-        float AB = km_latitude_diff;
-        float AH = (AD - BC) / 2;
+        double AB = km_latitude_diff;
+        double AH = (AD - BC) / 2;
 
-        float AB_2 = AB * AB;
-        float AH_2 = AH * AH;
-        float BH_2 = AB_2 - AH_2;
-        float BH = (float)Math.Sqrt(BH_2);
+        double AB_2 = AB * AB;
+        double AH_2 = AH * AH;
+        double BH_2 = AB_2 - AH_2;
+        double BH = (double)Math.Sqrt(BH_2);
 
-        float HD = AD - AH;
+        double HD = AD - AH;
 
-        float HD_2 = HD * HD;
-        float BD_2 = HD_2 + BH_2;
-        float BD = (float)Math.Sqrt(BD_2);
+        double HD_2 = HD * HD;
+        double BD_2 = HD_2 + BH_2;
+        double BD = (double)Math.Sqrt(BD_2);
 
         return BD;
     }
