@@ -60,6 +60,9 @@ public class UserGEO : GEO
             message.text = "Success";
             Latitude = Input.location.lastData.latitude;
             Longitude = Input.location.lastData.longitude;
+
+            //Latitude = 54.89895033529577;
+            //Longitude = 37.33385235071183;
             
             coords.text = "Lat: " + Latitude.ToString() + "\nLon: " + Longitude.ToString();
         }

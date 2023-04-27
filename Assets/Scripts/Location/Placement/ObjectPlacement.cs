@@ -13,8 +13,9 @@ public class ObjectPlacement : MonoBehaviour
     UserGEO userGEO;
     DistanceCalculation distanceCalculation;
     public double distance;
-    public double distanceToPlace = 80;
-    public double distanceToSpot = 20;
+    public double distanceToPlace = 80.0;
+    public double distanceToSpot = 20.0;
+    public string measure;
 
     void Start()
     {
@@ -38,32 +39,35 @@ public class ObjectPlacement : MonoBehaviour
         distance = RoundDistance(distance);
         distanceText.text = CheckDistance(distance);
 
-        if (distance < distanceToPlace)
-        {
-            Vector3 objectPosition = prefab.transform.position;
+        Vector3 objectPosition = prefab.transform.position;
+        
+        if (measure == "km")
+            distance *= 1000;
 
-            prefab.transform.position = new Vector3(objectPosition.x, objectPosition.y, (float)distance);
-            prefab.SetActive(true);
-        }
-        else
-            prefab.SetActive(false);
+        prefab.transform.position = new Vector3(objectPosition.x, objectPosition.y, (float)distance);
     }
 
     private double RoundDistance(double value)
     {
-        if (value >= 1f)
-            return (double)Math.Round(value, 0);
+        if (value >= 1.0)
+        {
+            measure = "km";
+            return (double)Math.Round(value, 1);
+        }
         else
+        {
+            measure = "m";
             return (double)Math.Round(value * 1000, 0); 
+        }
     }
 
     private string CheckDistance(double value)
     {
-        if (value >= 1000f)
+        if (measure == "km")
         {
             return value.ToString() + "км";
         }
-        else if (value < distanceToSpot)
+        else if (measure == "m" && value < distanceToSpot)
         {
             return "Вы на месте";
         }

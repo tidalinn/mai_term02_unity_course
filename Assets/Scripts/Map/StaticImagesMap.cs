@@ -7,7 +7,7 @@ using System;
 
 public class StaticImagesMap : Map
 {
-    public float zoom = 18f;
+    public float zoom = 11f;
     public int bearing = 0;
     public int pitch = 60;
     public enum style { Light, Dark, Streets, Outdoors };
@@ -37,6 +37,15 @@ public class StaticImagesMap : Map
     {
         userLatitude = userGEO.Latitude;
         userLongitude = userGEO.Longitude;
+
+        ObjectPlacement objectPlacement = player.GetComponent<ObjectPlacement>();
+        double distance = objectPlacement.distance;
+        string measure = objectPlacement.measure;
+
+        if (measure == "m" && distance < 500)
+            zoom = 15f;
+        if (measure == "m" && distance < 100)
+            zoom = 18f;
 
         url = urlBase + service + "/" + serviceVersion + "/" + pathMapbox + "/" + 
               styleStr[(int)mapStyle] + "/static" + "/" +
