@@ -21,6 +21,7 @@ public class StaticImagesMap : Map
 
     void Start()
     {
+        /*
         service = "styles";
         serviceVersion = "v1";
 
@@ -31,10 +32,12 @@ public class StaticImagesMap : Map
 
         objectLatitude = objectGEO.Latitude;
         objectLongitude = objectGEO.Longitude;
+        */
     }
-
+    
     void Update()
     {
+        /*
         userLatitude = userGEO.Latitude;
         userLongitude = userGEO.Longitude;
 
@@ -56,5 +59,6 @@ public class StaticImagesMap : Map
               "access_token=" + accessToken;    
 
         UpdateMap(url);
+        */
     }
 }

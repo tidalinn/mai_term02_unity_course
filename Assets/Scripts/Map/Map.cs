@@ -10,7 +10,7 @@ public class Map : MonoBehaviour
     public GameObject prefab;
     public GameObject player;
     public string url;
-    public string urlBase = "https://api.mapbox.com/";
+    public string urlBase = "https://www.google.ru/maps/"; //"https://api.mapbox.com/";
     public string service;
     public string serviceVersion;
     public string pathMapbox = "mapbox";
@@ -41,6 +41,7 @@ public class Map : MonoBehaviour
         Debug.Log(url);
 
         UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
+
         yield return www.SendWebRequest();
 
         if (www.result != UnityWebRequest.Result.Success)

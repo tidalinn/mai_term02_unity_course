@@ -34,7 +34,7 @@ public class ObjectPlacement : MonoBehaviour
             objectGEO.Longitude
         );
 
-        distanceFullText.text = "Distance: " + distance.ToString();
+        distanceFullText.text = distance.ToString();
         
         distance = RoundDistance(distance);
         distanceText.text = CheckDistance(distance);
