@@ -38,9 +38,13 @@ public class DirectionsMap : Map
         //double distance = objectPlacement.distance;
         //string measure = objectPlacement.measure;
 
+        url = "https://yandex.ru/maps/?ll=37.341862%2C54.898742&mode=routes&rtext=54.901977%2C37.361679~54.899075%2C37.333891&rtt=pd&ruri=~&z=16.1";
+
+        /*
         url = urlBase + "dir/" + "\'" + ReplaceComma(userLatitude) + "," + ReplaceComma(userLongitude) + "\'" + 
               "/" + ReplaceComma(objectLatitude) + "," + ReplaceComma(objectLongitude) + "/" +
               "am=t" + "/";
+        */
 
         // https://www.google.ru/maps/dir/'54.89903207840987,37.333860397338874'/54.9019771,37.3617049/@54.9008153,37.3375318,15z/am=t/data=!4m9!4m8!1m5!1m1!1s0x0:0x7698b90aa89785a2!2m2!1d37.3338604!2d54.8990321!1m0!3e2?entry=ttu
 
