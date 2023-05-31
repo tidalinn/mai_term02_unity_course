@@ -12,14 +12,16 @@ public class ObjectPlacement : MonoBehaviour
     ObjectGEO objectGEO;
     UserGEO userGEO;
     DistanceCalculation distanceCalculation;
+    PositionCalculation positionCalculation;
     public double distance;
-    public double distanceToPlace = 80.0;
-    public double distanceToSpot = 20.0;
+    public Vector3 position;
+    public double distanceToApproach = 20.0;
     public string measure;
 
     void Start()
     {
         distanceCalculation = GetComponent<DistanceCalculation>();
+        positionCalculation = GetComponent<PositionCalculation>();
 
         objectGEO = prefab.GetComponent<ObjectGEO>();
         userGEO = GetComponent<UserGEO>();
@@ -27,6 +29,7 @@ public class ObjectPlacement : MonoBehaviour
 
     void Update()
     {
+        // calculate distance from user to the object
         distance = distanceCalculation.CalculateDistance(
             userGEO.Latitude,
             userGEO.Longitude,
@@ -39,12 +42,25 @@ public class ObjectPlacement : MonoBehaviour
         distance = RoundDistance(distance);
         distanceText.text = CheckDistance(distance);
 
-        Vector3 objectPosition = prefab.transform.position;
-        
         if (measure == "km")
+        {
             distance *= 1000;
+        }
 
-        prefab.transform.position = new Vector3(objectPosition.x, objectPosition.y, (float)distance);
+        // get object position regarding the user
+        position = positionCalculation.CalculatePosition(
+            prefab.transform.position,
+            distance,
+            userGEO.Latitude,
+            userGEO.Longitude,
+            objectGEO.Latitude,
+            objectGEO.Longitude
+        );
+
+        if (!float.IsNaN(position.x) && !float.IsNaN(position.z)) 
+        {
+            prefab.transform.position = position;
+        }
     }
 
     private double RoundDistance(double value)
@@ -67,7 +83,7 @@ public class ObjectPlacement : MonoBehaviour
         {
             return value.ToString() + "км";
         }
-        else if (measure == "m" && value < distanceToSpot)
+        else if (measure == "m" && value < distanceToApproach)
         {
             return "Вы на месте";
         }

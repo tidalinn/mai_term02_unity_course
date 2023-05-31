@@ -28,7 +28,9 @@ public class UserGEO : GEO
 
         // Check if user has location service enabled
         if (!Input.location.isEnabledByUser)
+        {
             yield return new WaitForSeconds(5);
+        }
 
         // Start service before querying location
         Input.location.Start();
@@ -58,11 +60,12 @@ public class UserGEO : GEO
         else
         {
             message.text = "Success";
+            
             Latitude = Input.location.lastData.latitude;
             Longitude = Input.location.lastData.longitude;
 
-            //Latitude = 54.89895033529577;
-            //Longitude = 37.33385235071183;
+            //Latitude = 54.89900431661615;
+            //Longitude = 37.33388185501099;
             
             coords.text = "Lat: " + Latitude.ToString() + "\nLon: " + Longitude.ToString();
         }

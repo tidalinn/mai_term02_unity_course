@@ -14,11 +14,11 @@ public class DistanceCalculation: MonoBehaviour
         double objectLatitude, 
         double objectLongitude)
     {
-        // latitude - широта
-        // longitude - долгота
+        // latitude - широта ↑ Y
+        // longitude - долгота → X
 
-        // object -> B C
-        //          A   D <- User
+        // object ->  B C
+        //          A     D <- User
 
         // (float, float) A = (objectLatitude, userLongitude);
         // (float, float) B = (userLatitude, userLongitude);
@@ -29,7 +29,7 @@ public class DistanceCalculation: MonoBehaviour
         double km_latitude_diff = degrees_latitude_diff * km_per_degree_meridian;
 
         double objectLatitudeCos = (double)Math.Cos(Math.PI * objectLatitude / 180.0);
-        double userLatitudeCos = (double)Math.Cos(Math.PI *userLatitude / 180.0);
+        double userLatitudeCos = (double)Math.Cos(Math.PI * userLatitude / 180.0);
 
         double degree_top = km_per_degree_equator * userLatitudeCos;
         double degree_bottom = km_per_degree_equator * objectLatitudeCos;

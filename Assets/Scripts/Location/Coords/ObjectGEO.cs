@@ -9,18 +9,21 @@ public class ObjectGEO : GEO
     public TMP_InputField LatitudeInput;
     public TMP_InputField LongitudeInput;
 
-    private void Start() {
+    private void Start() 
+    {
         LatitudeInput.text = Latitude.ToString();
         LongitudeInput.text = Longitude.ToString();
     }
 
-    private void Update() {
-        double latInput = Convert.ToDouble(LatitudeInput.text);
-        double lonInput = Convert.ToDouble(LongitudeInput.text);
+    private void Update() 
+    {
+        double latitudeInput = Convert.ToDouble(ReplaceDot(LatitudeInput.text));
+        double longitudeInput = Convert.ToDouble(ReplaceDot(LongitudeInput.text));
 
-        if (Latitude != latInput || Longitude != lonInput) {
-            Latitude = latInput;
-            Longitude = lonInput;
+        if (Latitude != latitudeInput || Longitude != longitudeInput) 
+        {
+            Latitude = latitudeInput;
+            Longitude = longitudeInput;
         }
     }
 }
