@@ -29,9 +29,6 @@ public class ORSView : WebView
         {
             url = urlUpdate;
             urlText.text = url.ToString();
-
-            Destroy(ors);
-            StartCoroutine(LoadWebView(objectName, url));
         }
     }
 
