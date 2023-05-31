@@ -37,10 +37,10 @@ public class NaviGatorView : WebView
     void OnGUI()
     {
         GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
-        buttonStyle.fontSize = 36;
+        buttonStyle.fontSize = 28;
 
         int buttonHeight = 80;
-        int buttonWidth = 200;
+        int buttonWidth = 160;
 
         if (GUI.Button(
             new Rect(marginLeft, marginTop - buttonHeight - 20, buttonWidth, buttonHeight), 

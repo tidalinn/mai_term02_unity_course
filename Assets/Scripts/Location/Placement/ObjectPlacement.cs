@@ -57,9 +57,17 @@ public class ObjectPlacement : MonoBehaviour
             objectGEO.Longitude
         );
 
-        if (!float.IsNaN(position.x) && !float.IsNaN(position.z)) 
+        if (distance <= distanceToApproach)
         {
-            prefab.transform.position = position;
+            Vector3 positionFixed = prefab.transform.position;
+            prefab.transform.position = new Vector3(positionFixed.x, positionFixed.y, (float)distance);
+        }
+        else
+        {
+            if (!float.IsNaN(position.x) && !float.IsNaN(position.z)) 
+            {
+                prefab.transform.position = position;
+            }
         }
     }
 

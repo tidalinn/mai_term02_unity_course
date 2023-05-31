@@ -10,7 +10,8 @@ public class TargetIndicator : MonoBehaviour
     public float rotationSpeed = 3.0f;
     public int seconds = 10;
 
-    void Start() {        
+    void Start() 
+    {        
         player = GameObject.FindGameObjectWithTag("Player");
         objectPlacement = player.GetComponent<ObjectPlacement>();
     }

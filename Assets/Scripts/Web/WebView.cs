@@ -30,7 +30,7 @@ public class WebView : MonoBehaviour
 {
     public TextMeshProUGUI statusText;
     public TextMeshProUGUI urlText;
-    public int size = 700;
+    public int size;
     public int marginLeft;
     public int marginTop;
     public int marginRight = 20;
@@ -121,7 +121,6 @@ public class WebView : MonoBehaviour
 #else
                 var js = "";
 #endif
-
                 webViewObject.EvaluateJS(js + @"Unity.call('ua=' + navigator.userAgent)");
             }
         );
@@ -129,9 +128,11 @@ public class WebView : MonoBehaviour
 #if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
         webViewObject.bitmapRefreshCycle = 1;
 #endif
-
+        size = (int)(Screen.height / 2.5);
         marginLeft = Screen.width - size - marginRight;
         marginTop = Screen.height - size - marginBottom;
+
+        Debug.Log(Screen.height);
 
         webViewObject.SetMargins(marginLeft, marginTop, marginRight, marginBottom);
         webViewObject.SetTextZoom(100);  // android only. cf. https://stackoverflow.com/questions/21647641/android-webview-set-font-size-system-default/47017410#47017410
@@ -168,13 +169,11 @@ public class WebView : MonoBehaviour
                     yield return unityWebRequest.SendWebRequest();
 
                     result = unityWebRequest.downloadHandler.data;
-
 #else
                     var www = new WWW(src);
                     yield return www;
                     result = www.bytes;
 #endif
-
                 } 
                 else 
                 {

@@ -12,8 +12,8 @@ public class DistanceCalculation: MonoBehaviour
         double userLatitude, 
         double userLongitude, 
         double objectLatitude, 
-        double objectLongitude)
-    {
+        double objectLongitude
+    ) {
         // latitude - широта ↑ Y
         // longitude - долгота → X
 

@@ -56,8 +56,7 @@ public class PositionCalculation: MonoBehaviour
     (int, int) GetCoordsLocation(
         (double, double) A,
         (double, double) B
-    )
-    {
+    ) {
         if (B.Item1 > A.Item1)
         {
             // user
@@ -98,7 +97,8 @@ public class PositionCalculation: MonoBehaviour
                 return (-1, 0);
             }
         }
-        else {
+        else 
+        {
             return (0, 0);
         }
     }

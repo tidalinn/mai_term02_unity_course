@@ -35,10 +35,10 @@ public class ORSView : WebView
     void OnGUI()
     {
         GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
-        buttonStyle.fontSize = 36;
+        buttonStyle.fontSize = 28;
 
         int buttonHeight = 80;
-        int buttonWidth = 330;
+        int buttonWidth = 270;
 
         if (GUI.Button(
             new Rect(marginLeft + buttonWidth - 100, marginTop - buttonHeight - 20, buttonWidth, buttonHeight), 
