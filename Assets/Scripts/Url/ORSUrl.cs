@@ -12,6 +12,9 @@ public class ORSUrl : Url
 
     void Update()
     {
+        userLatitude = userGEO.Latitude;
+        userLongitude = userGEO.Longitude;
+        
         string urlUpdate = GenerateUrl(userLatitude, userLongitude);
 
         if (url != urlUpdate)

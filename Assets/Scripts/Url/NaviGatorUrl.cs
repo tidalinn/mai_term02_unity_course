@@ -11,6 +11,9 @@ public class NaviGatorUrl : Url
 
     void Update()
     {
+        objectLatitude = objectGEO.Latitude;
+        objectLongitude = objectGEO.Longitude;
+        
         string urlUpdate = GenerateUrl(objectLatitude, objectLongitude);
 
         if (url != urlUpdate)
