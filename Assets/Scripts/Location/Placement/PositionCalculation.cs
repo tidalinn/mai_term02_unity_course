@@ -46,8 +46,8 @@ public class PositionCalculation: MonoBehaviour
         (int, int) sign = GetCoordsLocation(A, B);
         objectCoordsText.text = sign.ToString();
 
-        float x = (float)(A_cos * distance + sign.Item1 * distance);
-        float z = (float)(A_sin * distance + sign.Item2 * distance);
+        float x = (float)(A_sin * distance + sign.Item1 * distance);
+        float z = (float)(A_cos * distance + sign.Item2 * distance);
         position = new Vector3(x, position.y, z);
 
         return position;

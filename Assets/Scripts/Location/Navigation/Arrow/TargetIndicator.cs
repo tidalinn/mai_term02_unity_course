@@ -21,7 +21,7 @@ public class TargetIndicator : MonoBehaviour
 
         Vector3 cameraPosition = Camera.main.transform.position;
         Vector3 followingPosition = new Vector3(
-            cameraPosition.x + 1, cameraPosition.y - 0.8f, cameraPosition.z + 1.5f
+            cameraPosition.x + 1, cameraPosition.y, cameraPosition.z + 1.5f
         );
 
         transform.position = followingPosition + Camera.main.transform.forward * 4f;
