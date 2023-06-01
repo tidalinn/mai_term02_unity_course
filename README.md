@@ -21,5 +21,5 @@ Unity course (Polina Orlova)
 * **Design:** Any. Aim: create a flexible system to attach to any design
 
 [Game Design Document](https://docs.google.com/document/d/1soUnbuJjMpJCNsZL-YtYGW4wsXm2rZh3ebHbP13XVZw/edit?usp=sharing) | 
-[APK file [27.04.2023]](https://drive.google.com/file/d/1u7uhBmFYn1x3HSkQ5BxTeUNbOEKRNIqG/view?usp=sharing) | [APK file [31.05.2023]](https://drive.google.com/file/d/1RB_R0jvuOzbCoFpY1f4EFKQf12nbWing/view?usp=sharing)
-[Video [27.04.2023]](https://drive.google.com/file/d/19ajF30nlt5pkoY4ku02kyT2X3XjXe_ZK/view?usp=sharing) | [Video [31.05.2023]()
+[APK file [27.04.2023]](https://drive.google.com/file/d/1u7uhBmFYn1x3HSkQ5BxTeUNbOEKRNIqG/view?usp=sharing) | [APK file [31.05.2023]](https://drive.google.com/file/d/1YrQ5wgnUwFTHxzcDelvQqhRkulRrTBUR/view?usp=sharing)
+[Video [27.04.2023]](https://drive.google.com/file/d/19ajF30nlt5pkoY4ku02kyT2X3XjXe_ZK/view?usp=sharing) | [Video [31.05.2023]]()
