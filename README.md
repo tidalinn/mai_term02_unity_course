@@ -20,6 +20,8 @@ Unity course (Polina Orlova)
 * **Location:** User current location + Object with attached coords
 * **Design:** Any. Aim: create a flexible system to attach to any design
 
-[Game Design Document](https://docs.google.com/document/d/1soUnbuJjMpJCNsZL-YtYGW4wsXm2rZh3ebHbP13XVZw/edit?usp=sharing) | 
+[Game Design Document](https://docs.google.com/document/d/1soUnbuJjMpJCNsZL-YtYGW4wsXm2rZh3ebHbP13XVZw/edit?usp=sharing)
+
 [APK file [27.04.2023]](https://drive.google.com/file/d/1u7uhBmFYn1x3HSkQ5BxTeUNbOEKRNIqG/view?usp=sharing) | [APK file [31.05.2023]](https://drive.google.com/file/d/1YrQ5wgnUwFTHxzcDelvQqhRkulRrTBUR/view?usp=sharing)
-[Video [27.04.2023]](https://drive.google.com/file/d/19ajF30nlt5pkoY4ku02kyT2X3XjXe_ZK/view?usp=sharing) | [Video [31.05.2023]]()
+
+[Video [27.04.2023]](https://drive.google.com/file/d/19ajF30nlt5pkoY4ku02kyT2X3XjXe_ZK/view?usp=sharing) | [Video 1](https://drive.google.com/file/d/1LYxnRlFWiWQJmGNgITL1bsGLYLBiJ3zF/view?usp=sharing) [Video 2](https://drive.google.com/file/d/1LtB5gTFJwNNWnBabUbovsEUC-IEEkDEi/view?usp=sharing) [Video 3](https://drive.google.com/file/d/1LyIHD0P1Sd2iHMQj61IcqrRB14kLf942/view?usp=share_link) [31.05.2023]
