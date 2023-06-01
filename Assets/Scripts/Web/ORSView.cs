@@ -45,7 +45,18 @@ public class ORSView : WebView
             "OpenRouteService",
             buttonStyle)
         ) {
-            Destroy(ors);
+            GameObject navigator = GameObject.Find("NaviGatorView");
+
+            if (navigator != null)
+            {
+                Destroy(navigator);
+            }
+
+            if (ors != null)
+            {
+                Destroy(ors);
+            }
+
             StartCoroutine(LoadWebView(objectName, url));
         }
     }

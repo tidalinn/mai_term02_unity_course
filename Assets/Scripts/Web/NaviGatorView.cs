@@ -47,7 +47,18 @@ public class NaviGatorView : WebView
             "NaviGator",
             buttonStyle)
         ) {
-            Destroy(navigator);
+            GameObject ors = GameObject.Find("ORSView");
+
+            if (ors != null)
+            {
+                Destroy(ors);
+            }
+
+            if (navigator != null)
+            {
+                Destroy(navigator);
+            }
+            
             StartCoroutine(LoadWebView(objectName, url));
         }
     }

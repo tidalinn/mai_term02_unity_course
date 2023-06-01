@@ -128,7 +128,7 @@ public class WebView : MonoBehaviour
 #if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
         webViewObject.bitmapRefreshCycle = 1;
 #endif
-        size = (int)(Screen.height / 2.5);
+        size = (int)(Screen.height / 2);
         marginLeft = Screen.width - size - marginRight;
         marginTop = Screen.height - size - marginBottom;
 

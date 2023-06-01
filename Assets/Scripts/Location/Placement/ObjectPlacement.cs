@@ -8,15 +8,18 @@ public class ObjectPlacement : MonoBehaviour
 {
     public GameObject prefab;
     public TextMeshProUGUI distanceFullText;
+    public TextMeshProUGUI distanceTextLabel;
     public TextMeshProUGUI distanceText;
+    public TextMeshProUGUI placementText;
     ObjectGEO objectGEO;
     UserGEO userGEO;
     DistanceCalculation distanceCalculation;
     PositionCalculation positionCalculation;
     public double distance;
     public Vector3 position;
-    public double distanceToApproach = 20.0;
+    public double distanceToApproach = 30.0;
     public string measure;
+    Vector3 positionFixed;
 
     void Start()
     {
@@ -25,6 +28,8 @@ public class ObjectPlacement : MonoBehaviour
 
         objectGEO = prefab.GetComponent<ObjectGEO>();
         userGEO = GetComponent<UserGEO>();
+
+        placementText.text = prefab.transform.position.ToString();
     }
 
     void Update()
@@ -60,13 +65,15 @@ public class ObjectPlacement : MonoBehaviour
         if (distance <= distanceToApproach)
         {
             Vector3 positionFixed = prefab.transform.position;
-            prefab.transform.position = new Vector3(positionFixed.x, positionFixed.y, (float)distance);
+            prefab.transform.position = new Vector3(0, positionFixed.y, (float)distance);;
+            placementText.text = prefab.transform.position.ToString();
         }
         else
         {
             if (!float.IsNaN(position.x) && !float.IsNaN(position.z)) 
             {
                 prefab.transform.position = position;
+                placementText.text = prefab.transform.position.ToString();
             }
         }
     }
@@ -87,17 +94,27 @@ public class ObjectPlacement : MonoBehaviour
 
     private string CheckDistance(double value)
     {
-        if (measure == "km")
+        if (objectGEO.Latitude != 0 && objectGEO.Longitude != 0)
         {
-            return value.ToString() + "км";
-        }
-        else if (measure == "m" && value < distanceToApproach)
-        {
-            return "Вы на месте";
+            distanceTextLabel.text = "По прямой до объекта:";
+
+            if (measure == "km")
+            {
+                return value.ToString() + "км";
+            }
+            else if (measure == "m" && value < distanceToApproach)
+            {
+                return "Вы на месте";
+            }
+            else
+            {
+                return value.ToString() + "м";
+            }
         }
         else
         {
-            return value.ToString() + "м";
+            distanceTextLabel.text = "";
+            return "";
         }
     }
 }

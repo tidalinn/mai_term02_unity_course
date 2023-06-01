@@ -44,10 +44,10 @@ public class PositionCalculation: MonoBehaviour
 
         // user as (0, 0)
         (int, int) sign = GetCoordsLocation(A, B);
-        objectCoordsText.text = sign.ToString();
+        sign = (sign.Item1, sign.Item2);
 
-        float x = (float)(A_sin * distance + sign.Item1 * distance);
-        float z = (float)(A_cos * distance + sign.Item2 * distance);
+        float x = (float)(sign.Item1 * (A_cos * distance + distance) / 2);
+        float z = (float)(sign.Item2 * (A_sin * distance + distance));
         position = new Vector3(x, position.y, z);
 
         return position;
@@ -56,25 +56,25 @@ public class PositionCalculation: MonoBehaviour
     (int, int) GetCoordsLocation(
         (double, double) A,
         (double, double) B
-    ) {
-        if (B.Item1 > A.Item1)
+    ) {        
+        if (B.Item1 > A.Item1) // -> X
         {
             // user
             //     object
             if (B.Item2 < A.Item2)
             {
-                return (1, -1);
+                return (-1, 1);
             }
             //     object
             // user
             else if (B.Item2 > A.Item2)
             {
-                return (1, 1);
+                return (-1, -1);
             }
             // user object
             else
             {
-                return (1, 0);
+                return (-1, 0);
             }
         }
         else if (B.Item1 < A.Item1)
@@ -83,23 +83,38 @@ public class PositionCalculation: MonoBehaviour
             // object
             if (B.Item2 < A.Item2)
             {
-                return (-1, -1);
+                return (1, 1);
             }
             // object
             //       user
             else if (B.Item2 > A.Item2)
             {
-                return (-1, 1);
+                return (1, -1);
             }
             // object user
             else
             {
-                return (-1, 0);
+                return (1, 0);
             }
         }
-        else 
+        else // B.Item1 == A.Item1
         {
-            return (0, 0);
+            // object
+            // user
+            if (B.Item2 > A.Item2)
+            {
+                return (0, -1);
+            }
+            // user
+            // object
+            else if (B.Item2 < A.Item2)
+            {
+                return (0, 1);
+            }
+            else // B.Item2 == A.Item2
+            {
+                return (0, 0);
+            }
         }
     }
 }
