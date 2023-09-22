@@ -20,4 +20,4 @@ Unity course (Polina Orlova)
 * **Location:** User current location + Object with attached coords
 * **Design:** Any. Aim: create a flexible system to attach to any design
 
-[Game Design Document](https://docs.google.com/document/d/1soUnbuJjMpJCNsZL-YtYGW4wsXm2rZh3ebHbP13XVZw/edit?usp=sharing) | [APK file](https://drive.google.com/file/d/1YrQ5wgnUwFTHxzcDelvQqhRkulRrTBUR/view?usp=sharing) | [Video]](https://youtu.be/07pFfY5Aub8)
+[Game Design Document](https://docs.google.com/document/d/1soUnbuJjMpJCNsZL-YtYGW4wsXm2rZh3ebHbP13XVZw/edit?usp=sharing) | [APK file](https://drive.google.com/file/d/1YrQ5wgnUwFTHxzcDelvQqhRkulRrTBUR/view?usp=sharing) | [Video](https://youtu.be/07pFfY5Aub8)
